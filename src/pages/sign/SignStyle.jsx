@@ -1,7 +1,7 @@
 import { Container } from "@mui/system";
 import styled from "styled-components";
 
-const LoginPageWrap = styled(Container)`
+const SignUpPageWrap = styled(Container)`
   background-color: lightblue;
   height: 100vh;
   overflow: hidden;
@@ -19,9 +19,8 @@ const LoginPageWrap = styled(Container)`
       border-radius:5px;
     }
     .MuiButtonBase-root{
-      width:83px;
-      margin-top:10px;
+      margin-top:20px;
     }
   }
 `
-export {LoginPageWrap};
+export {SignUpPageWrap};

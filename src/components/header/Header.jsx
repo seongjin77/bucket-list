@@ -17,7 +17,7 @@ const Header = () => {
                 <Typography variant="h3" component="h1">
                     Todo-list
                 </Typography>
-                {pathname !== '/signin' ? <Button onClick={login} color="inherit">login</Button> : null
+                {pathname === '/signin' || pathname === '/signup' ? null : <Button onClick={login} color="inherit">login</Button>
                 }
             </Toolbar>
         </HeaderBar>

@@ -11,8 +11,8 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Initial />} />
-                <Route path="/signup" element={<Sign />} />
                 <Route path="/signin" element={<Login />} />
+                <Route path="/signup" element={<Sign />} />
             </Routes>
         </Container>
     );
