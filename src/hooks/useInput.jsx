@@ -4,13 +4,10 @@ export function useInput(initialValue){
   const [inputValue, setInputValue] = useState(initialValue);
   const [checkValidated, setCheckValidated] = useState(false);
 
-  //console.log('유효성',checkValidated)
-
-  // 유효성 검사
+  // input값 변경 함수
   const handleChange = (e) => {
-
     setInputValue(e.target.value)
-
+    // 유효성 검사
     if(e.target.id === 'email' && e.target.value.includes('@')) {
       setCheckValidated(true)
     }
