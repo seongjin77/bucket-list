@@ -6,9 +6,14 @@ import HeaderBar from "./headerStyle";
 const Header = () => {
   const navigate = useNavigate();
   const {pathname} = useLocation();
-  
+  const token = !!localStorage.getItem('accessToken');
+
   const login = () => {
     navigate('/signin')
+  }
+  const logout = () =>{
+    navigate('/');
+    localStorage.removeItem('accessToken')
   }
 
     return (
@@ -17,8 +22,9 @@ const Header = () => {
                 <Typography variant="h3" component="h1">
                     Todo-list
                 </Typography>
-                {pathname === '/signin' || pathname === '/signup' ? null : <Button onClick={login} color="inherit">login</Button>
+                {pathname === '/signin' || pathname === '/signup' || token ? null : <Button onClick={login} color="inherit">login</Button>
                 }
+                {token ? <Button color="inherit" onClick={logout}>logout</Button> : null}
             </Toolbar>
         </HeaderBar>
     );
