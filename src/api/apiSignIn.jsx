@@ -1,9 +1,9 @@
 import { axiosApi } from "./apiAxios"
 
-const signUpAxios = async (body) => {
+const signInAxios = async (body) => {
   try{
-    const res = await axiosApi.post('/auth/signup',body);
-
+    const res = await axiosApi.post('/auth/signin',body);
+    console.log('로그인 응답', res);
     return res
 
   } catch(error){ 
@@ -13,4 +13,4 @@ const signUpAxios = async (body) => {
 
 }
 
-export {signUpAxios}
+export {signInAxios}

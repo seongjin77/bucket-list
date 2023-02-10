@@ -1,16 +1,7 @@
-import { axiosApi } from "./apiSignUp"
+import axios from "axios";
+import { BASE_URL } from "../constant/baseUrl";
 
-const signUpAxios = async (body) => {
-  try{
-    const res = await axiosApi.post('/auth/signup',body);
-
-    return res
-
-  } catch(error){ 
-    console.log(error);
-    alert('console에서 에러 메세지를 확인해주세요')
-  }
-
-}
-
-export {signUpAxios}
+export const axiosApi = axios.create({
+  baseURL: BASE_URL,
+  headers: { "Content-Type": "application/json" }
+})

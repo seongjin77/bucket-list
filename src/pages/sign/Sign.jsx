@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { SignUpPageWrap } from "./SignStyle";
 import { useInput } from "../../hooks/useInput";
-import { signUpAxios } from "../../api/apiAxios";
+import { signUpAxios } from "../../api/apiSignUp";
 
 const Sign = () => {
     const [emailValue, emailHandleChange, validatedEmail] = useInput("");
@@ -13,13 +13,12 @@ const Sign = () => {
     const navigate = useNavigate();
 
     const SignUp = async () => {
-        const {data,status} = await signUpAxios({
+        const {status} = await signUpAxios({
             email: emailValue,
             password: passWordValue,
         });
         
         if (status === 201) {
-            localStorage.setItem("accessToken", data.access_token);
             navigate("/signin");
         }
     };

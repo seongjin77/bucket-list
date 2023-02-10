@@ -2,14 +2,28 @@ import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { signInAxios } from "../../api/apiSignIn";
 import { LoginPageWrap } from "./LoginStyle";
+import { useInput } from "../../hooks/useInput";
 
 const Login = () => {
     const navigate = useNavigate();
+    const [logInEmail, emailHandleChange, validatedEmail] = useInput("");
+    const [logInPassword, passwordHandleChange, validatedPassWord] =
+        useInput("");
+    const isButtonAbled = validatedEmail && validatedPassWord;
 
     const moveSignUp = () => {
-        console.log("dd");
         navigate("/signup");
+    };
+
+    const signIn = async () => {
+        const {data} = await signInAxios({
+            email:logInEmail,
+            password: logInPassword
+        });
+        localStorage.setItem("accessToken", data.access_token);
+        navigate('/todo')
     };
 
     return (
@@ -18,17 +32,28 @@ const Login = () => {
                 <Box>
                     <Typography>Login</Typography>
                     <TextField
+                        value={logInEmail}
+                        id="email"
                         margin="normal"
                         type={"email"}
                         placeholder="이메일"
                         data-testid="email-input"
+                        onChange={emailHandleChange}
                     />
                     <TextField
+                        value={logInPassword}
+                        id="password"
                         type={"password"}
                         placeholder="비밀번호"
                         data-testid="password-input"
+                        onChange={passwordHandleChange}
                     />
-                    <Button variant="contained" data-testid="signin-button">
+                    <Button
+                        disabled={!isButtonAbled}
+                        variant="contained"
+                        data-testid="signin-button"
+                        onClick={signIn}
+                    >
                         로그인
                     </Button>
                     <Button
