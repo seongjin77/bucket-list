@@ -25,5 +25,5 @@ export function useInput(initialValue){
     }
   }
 
-  return [inputValue,handleChange,checkValidated]
+  return [{inputValue,setInputValue},handleChange,checkValidated]
 }

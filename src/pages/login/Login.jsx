@@ -19,8 +19,8 @@ const Login = () => {
 
     const signIn = async () => {
         const {data} = await signInAxios({
-            email:logInEmail,
-            password: logInPassword
+            email:logInEmail.inputValue,
+            password: logInPassword.inputValue
         });
         localStorage.setItem("accessToken", data.access_token);
         navigate('/todo')
@@ -32,7 +32,7 @@ const Login = () => {
                 <Box>
                     <Typography>Login</Typography>
                     <TextField
-                        value={logInEmail}
+                        value={logInEmail.inputValue}
                         id="email"
                         margin="normal"
                         type={"email"}
@@ -41,7 +41,7 @@ const Login = () => {
                         onChange={emailHandleChange}
                     />
                     <TextField
-                        value={logInPassword}
+                        value={logInPassword.inputValue}
                         id="password"
                         type={"password"}
                         placeholder="비밀번호"

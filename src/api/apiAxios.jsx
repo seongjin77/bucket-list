@@ -18,7 +18,7 @@ axiosAuthApi.interceptors.request.use(
     return config
   },
   (error) => {
-    console.log(error);
+    console.log('타겟',error);
     return Promise.reject(error)
   }
 )

@@ -14,8 +14,8 @@ const Sign = () => {
 
     const SignUp = async () => {
         const {status} = await signUpAxios({
-            email: emailValue,
-            password: passWordValue,
+            email: emailValue.inputValue,
+            password: passWordValue.inputValue,
         });
         
         if (status === 201) {
@@ -30,7 +30,7 @@ const Sign = () => {
                     <Typography>Sign up</Typography>
                     <TextField
                         id="email"
-                        value={emailValue}
+                        value={emailValue.inputValue}
                         onChange={emailHandleChange}
                         margin="normal"
                         type={"email"}
@@ -39,7 +39,7 @@ const Sign = () => {
                     />
                     <TextField
                         id="password"
-                        value={passWordValue}
+                        value={passWordValue.inputValue}
                         onChange={passWordHandleChange}
                         type={"text"}
                         placeholder="비밀번호를 입력해주세요"
