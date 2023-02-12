@@ -10,8 +10,9 @@ const TodoWrap = styled(Container)`
 export {TodoWrap}
 
 const TodoBox = styled(Box)`
-   background-color: skyblue;
-   height: 70vh;
+  // background-color: skyblue;
+   // padding-top: 500px;
+    height: 70vh;
 
 `
 export {TodoBox}
