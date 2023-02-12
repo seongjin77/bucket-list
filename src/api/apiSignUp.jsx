@@ -8,7 +8,7 @@ const signUpAxios = async (body) => {
 
   } catch(error){ 
     console.log(error);
-    alert('console에서 에러 메세지를 확인해주세요')
+    alert('콘솔 창에서 에러 메세지를 확인해주세요')
   }
 
 }
