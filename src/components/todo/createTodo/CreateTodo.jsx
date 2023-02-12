@@ -5,13 +5,15 @@ import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import { useInput } from "../../../hooks/useInput";
 import { createTodoAxios } from "../../../api/apiCreateTodo";
 
-const CreateTodo = () => {
+const CreateTodo = ({getTodos}) => {
     const [todoValue, setTodoValue] = useInput("");
 
     const submitTodo = async () => {
         const res = await createTodoAxios({
             todo: todoValue.inputValue
         });
+        
+        getTodos();
 
         if( res?.status === 400 ){
             alert('할 일을 입력해주세요')

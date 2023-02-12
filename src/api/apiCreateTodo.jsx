@@ -8,7 +8,7 @@ const createTodoAxios = async (body) => {
   }
   catch(error){
       console.log('createTodoAxios',error)
-      return error.response;
+      return error;
     
   }
 }
