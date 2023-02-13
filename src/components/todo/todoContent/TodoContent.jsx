@@ -8,23 +8,26 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
+import { deleteTodoAxios } from "../../../api/apiDeleteTodo";
 
-const TodoContent = ({ item }) => {
-    console.log(item);
-    const [checked, setChecked] = useState([]);
+const TodoContent = ({ item,getTodos }) => {
+    //console.log(item);
+    // 2.수정기능 만들것.
+    const [checked, setChecked] = useState(item.isCompleted);
 
-    const handleToggle = (value) => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
+    const handleToggle = () => () => {
 
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        setChecked(newChecked);
+      setChecked(!checked)
     };
+
+    const toDoDelete = async (id) => {
+      if(!window.confirm('삭제하시겠습니까?')){
+        return
+      }
+      const res = await deleteTodoAxios(id)
+
+      getTodos();
+    }
 
     return (
         <TodoLi
@@ -33,7 +36,7 @@ const TodoContent = ({ item }) => {
                 <IconButton edge="end" aria-label="comments">
                   <EditIcon/>
                 </IconButton>
-                <IconButton edge="end" aria-label="comments">
+                <IconButton onClick={()=>{toDoDelete(item.id)}} edge="end" aria-label="comments">
                   <DeleteOutlineRoundedIcon/>
                 </IconButton>
               </>
@@ -43,13 +46,13 @@ const TodoContent = ({ item }) => {
         >
             <ListItemButton
                 role={undefined}
-                onClick={handleToggle(item.id)}
+                onClick={handleToggle()}
                 dense
             >
                 <ListItemIcon>
                     <Checkbox
                         edge="start"
-                        checked={checked.indexOf(item.id) !== -1}
+                        checked={checked}
                         tabIndex={-1}
                         disableRipple
                         inputProps={{ "aria-labelledby": item.id }}
