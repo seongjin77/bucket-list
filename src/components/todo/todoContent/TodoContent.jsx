@@ -9,26 +9,31 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
 import { deleteTodoAxios } from "../../../api/apiDeleteTodo";
+import { UpdateAxios } from "../../../api/apiUpdateTodo";
 
 const TodoContent = ({ item,getTodos }) => {
     //console.log(item);
     // 2.수정기능 만들것.
     const [checked, setChecked] = useState(item.isCompleted);
 
-    const handleToggle = () => () => {
-
+    const handleCheckToggle = () => {
       setChecked(!checked)
+
+      UpdateAxios(item.id,{
+        todo: item.todo,
+        isCompleted: !checked
+      })
     };
 
     const toDoDelete = async (id) => {
       if(!window.confirm('삭제하시겠습니까?')){
         return
       }
-      const res = await deleteTodoAxios(id)
-
+      await deleteTodoAxios(id)
       getTodos();
     }
-
+    // 수정기능 시작
+    // 만약 수정버튼을 눌렀을떄 
     return (
         <TodoLi
             secondaryAction={
@@ -46,7 +51,7 @@ const TodoContent = ({ item,getTodos }) => {
         >
             <ListItemButton
                 role={undefined}
-                onClick={handleToggle()}
+                onClick={handleCheckToggle}
                 dense
             >
                 <ListItemIcon>
