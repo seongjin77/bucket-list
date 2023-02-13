@@ -3,18 +3,24 @@ import { TodoLi } from "./TodoContentStyle";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import EditIcon from '@mui/icons-material/Edit';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
+import Input from '@mui/material/Input';
 import { useState } from "react";
 import { deleteTodoAxios } from "../../../api/apiDeleteTodo";
 import { UpdateAxios } from "../../../api/apiUpdateTodo";
+import { useInput } from "../../../hooks/useInput";
 
 const TodoContent = ({ item,getTodos }) => {
-    //console.log(item);
-    // 2.수정기능 만들것.
+  
     const [checked, setChecked] = useState(item.isCompleted);
+    const [edit, setEdit] = useState(false);
+    const [editText, editTextChange] = useInput(item.todo)
+    const ariaLabel = { 'aria-label': 'editInput' };
 
     const handleCheckToggle = () => {
       setChecked(!checked)
@@ -25,24 +31,45 @@ const TodoContent = ({ item,getTodos }) => {
       })
     };
 
-    const toDoDelete = async (id) => {
+    const toDoDelete = async () => {
       if(!window.confirm('삭제하시겠습니까?')){
         return
       }
-      await deleteTodoAxios(id)
+      await deleteTodoAxios(item.id)
       getTodos();
     }
-    // 수정기능 시작
-    // 만약 수정버튼을 눌렀을떄 
+
+    // 수정 취소, 수정 버튼
+    const handleEdit = () => {
+      setEdit(!edit)
+
+    }
+
+    // 수정 완료 버튼
+    const editComplete = async () => {
+        if(!window.confirm('수정하시겠습니까?')){
+          return
+        }
+
+       await UpdateAxios(item.id,{
+          todo: editText.inputValue,
+          isCompleted: checked
+        })
+        setEdit(!edit)
+        getTodos();
+    }
+   
     return (
+      <>
+      {edit ? 
         <TodoLi
             secondaryAction={
               <>
-                <IconButton edge="end" aria-label="comments">
-                  <EditIcon/>
+                <IconButton onClick={editComplete} edge="end" aria-label="CompletedBtn">
+                  <TaskAltIcon/>
                 </IconButton>
-                <IconButton onClick={()=>{toDoDelete(item.id)}} edge="end" aria-label="comments">
-                  <DeleteOutlineRoundedIcon/>
+                <IconButton onClick={handleEdit} edge="end" aria-label="cancelBtn">
+                  <HighlightOffIcon/>
                 </IconButton>
               </>
             }
@@ -63,9 +90,42 @@ const TodoContent = ({ item,getTodos }) => {
                         inputProps={{ "aria-labelledby": item.id }}
                     />
                 </ListItemIcon>
-                <ListItemText id={item.id} primary={`${item.todo}`} />
+                <Input value={editText.inputValue} onChange={editTextChange} inputProps={ariaLabel} />
             </ListItemButton>
         </TodoLi>
+        :
+        <TodoLi
+        secondaryAction={
+          <>
+            <IconButton onClick={handleEdit} edge="end" aria-label="modificationBtn">
+              <EditIcon/>
+            </IconButton>
+            <IconButton onClick={toDoDelete} edge="end" aria-label="deleteBtn">
+              <DeleteOutlineRoundedIcon/>
+            </IconButton>
+          </>
+        }
+        
+        disablePadding
+    >
+        <ListItemButton
+            role={undefined}
+            onClick={handleCheckToggle}
+            dense
+        >
+            <ListItemIcon>
+                <Checkbox
+                    edge="start"
+                    checked={checked}
+                    tabIndex={-1}
+                    disableRipple
+                    inputProps={{ "aria-labelledby": item.id }}
+                />
+            </ListItemIcon>
+            <ListItemText id={item.id} primary={`${item.todo}`} />
+        </ListItemButton>
+    </TodoLi> }
+      </>
     );
 };
 

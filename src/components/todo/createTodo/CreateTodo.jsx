@@ -6,7 +6,7 @@ import { useInput } from "../../../hooks/useInput";
 import { createTodoAxios } from "../../../api/apiCreateTodo";
 
 const CreateTodo = ({getTodos}) => {
-    const [todoValue, setTodoValue] = useInput("");
+    const [todoValue, todoValueChange] = useInput("");
 
     const submitTodo = async () => {
         const res = await createTodoAxios({
@@ -27,7 +27,7 @@ const CreateTodo = ({getTodos}) => {
                 <TodoInput
                     value={todoValue.inputValue}
                     data-testid="new-todo-input"
-                    onChange={setTodoValue}
+                    onChange={todoValueChange}
                     id="todo"
                     label="할 일"
                     variant="outlined"
