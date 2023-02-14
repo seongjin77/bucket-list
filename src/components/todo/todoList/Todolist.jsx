@@ -4,7 +4,6 @@ import { TodoListWrap } from "./TodolistStyle";
 
 const Todolist = ({ todos,getTodos }) => {
     
-    // item 값 프롭스로 내려주기
     return (
         <TodoListWrap>
             {todos.map((item) => (

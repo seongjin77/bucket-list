@@ -5,7 +5,6 @@ const TodoListWrap = styled(List)`
     &.MuiList-root {
         overflow-y: scroll;
         height: 100%;
-        // background-color: lightcoral;
     }
 
     &.MuiList-root::-webkit-scrollbar {
