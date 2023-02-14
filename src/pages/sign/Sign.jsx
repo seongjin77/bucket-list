@@ -32,7 +32,6 @@ const Sign = () => {
                         id="email"
                         value={emailValue.inputValue}
                         onChange={emailHandleChange}
-                        margin="normal"
                         type={"email"}
                         placeholder="이메일을 입력해주세요"
                         data-testid="email-input"
@@ -46,7 +45,7 @@ const Sign = () => {
                         placeholder="비밀번호를 입력해주세요"
                         data-testid="password-input"
                     />
-                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
+                    <Typography className="validationTxt" component='span'>비밀번호는 8자리 이상입니다</Typography>
                     <Button
                         onClick={SignUp}
                         disabled={!isButtonAbled}

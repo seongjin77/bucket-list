@@ -23,7 +23,6 @@ const SignUpPageWrap = styled(Container)`
       &.validationTxt{
         font-size: 12px;
         color: #9e9e9e;
-        margin-top: -4px;
       }
     }
     .MuiButtonBase-root{

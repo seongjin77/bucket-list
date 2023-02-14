@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { signInAxios } from "../../api/apiSignIn";
-import { LoginPageWrap } from "./LoginStyle";
+import { LoginPageWrap, ButtonFlexBox } from "./LoginStyle";
 import { useInput } from "../../hooks/useInput";
 
 const Login = () => {
@@ -18,19 +18,21 @@ const Login = () => {
     };
 
     const signIn = async () => {
-        const {data} = await signInAxios({
-            email:logInEmail.inputValue,
-            password: logInPassword.inputValue
+        const { data } = await signInAxios({
+            email: logInEmail.inputValue,
+            password: logInPassword.inputValue,
         });
         localStorage.setItem("accessToken", data.access_token);
-        navigate('/todo')
+        navigate("/todo");
     };
 
     return (
         <LoginPageWrap>
             <form>
                 <Box>
-                    <Typography variant="h4" component='h2'>Login</Typography>
+                    <Typography variant="h4" component="h2">
+                        Login
+                    </Typography>
                     <TextField
                         value={logInEmail.inputValue}
                         id="email"
@@ -39,7 +41,9 @@ const Login = () => {
                         data-testid="email-input"
                         onChange={emailHandleChange}
                     />
-                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
+                    <Typography className="validationTxt" component="span">
+                        이메일 형식으로 적어주세요
+                    </Typography>
                     <TextField
                         value={logInPassword.inputValue}
                         id="password"
@@ -48,22 +52,26 @@ const Login = () => {
                         data-testid="password-input"
                         onChange={passwordHandleChange}
                     />
-                    <Typography className="validationTxt" component='span'>비밀번호는 8자 이상입니다</Typography>
-                    <Button
-                        disabled={!isButtonAbled}
-                        variant="contained"
-                        data-testid="signin-button"
-                        onClick={signIn}
-                    >
-                        로그인
-                    </Button>
-                    <Button
-                        variant="contained"
-                        onClick={moveSignUp}
-                        data-testid="signup-button"
-                    >
-                        회원가입
-                    </Button>
+                    <Typography className="validationTxt" component="span">
+                        비밀번호는 8자 이상입니다
+                    </Typography>
+                    <ButtonFlexBox>
+                        <Button
+                            disabled={!isButtonAbled}
+                            variant="contained"
+                            data-testid="signin-button"
+                            onClick={signIn}
+                        >
+                            로그인
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={moveSignUp}
+                            data-testid="signup-button"
+                        >
+                            회원가입
+                        </Button>
+                    </ButtonFlexBox>
                 </Box>
             </form>
         </LoginPageWrap>
