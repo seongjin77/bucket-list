@@ -27,7 +27,7 @@ const Sign = () => {
         <SignUpPageWrap>
             <form>
                 <Box>
-                    <Typography>Sign up</Typography>
+                    <Typography variant="h4" component='h2'>Sign up</Typography>
                     <TextField
                         id="email"
                         value={emailValue.inputValue}
@@ -37,6 +37,7 @@ const Sign = () => {
                         placeholder="이메일을 입력해주세요"
                         data-testid="email-input"
                     />
+                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
                     <TextField
                         id="password"
                         value={passWordValue.inputValue}
@@ -45,6 +46,7 @@ const Sign = () => {
                         placeholder="비밀번호를 입력해주세요"
                         data-testid="password-input"
                     />
+                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
                     <Button
                         onClick={SignUp}
                         disabled={!isButtonAbled}

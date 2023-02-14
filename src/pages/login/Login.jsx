@@ -30,16 +30,16 @@ const Login = () => {
         <LoginPageWrap>
             <form>
                 <Box>
-                    <Typography>Login</Typography>
+                    <Typography variant="h4" component='h2'>Login</Typography>
                     <TextField
                         value={logInEmail.inputValue}
                         id="email"
-                        margin="normal"
                         type={"email"}
                         placeholder="이메일"
                         data-testid="email-input"
                         onChange={emailHandleChange}
                     />
+                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
                     <TextField
                         value={logInPassword.inputValue}
                         id="password"
@@ -48,6 +48,7 @@ const Login = () => {
                         data-testid="password-input"
                         onChange={passwordHandleChange}
                     />
+                    <Typography className="validationTxt" component='span'>비밀번호는 8자 이상입니다</Typography>
                     <Button
                         disabled={!isButtonAbled}
                         variant="contained"
