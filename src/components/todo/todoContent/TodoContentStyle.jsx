@@ -2,10 +2,13 @@ import { ListItem } from "@mui/material";
 import styled from "styled-components";
 
 const TodoLi = styled(ListItem)`
-
-  .MuiInputBase-root{
-    width: 80%;
-  }
-`
-
+    .MuiInputBase-root{
+      width: 80%;
+    }
+    .MuiListItemText-root{
+    }
+  `
+  
+  
+  
 export {TodoLi}

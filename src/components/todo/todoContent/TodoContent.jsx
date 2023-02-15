@@ -20,7 +20,7 @@ const TodoContent = ({ item,getTodos }) => {
     const [checked, setChecked] = useState(item.isCompleted);
     const [edit, setEdit] = useState(false);
     const [editText, editTextChange] = useInput(item.todo)
-    const ariaLabel = { 'aria-label': 'editInput' };
+    const inputProp = { 'aria-label': 'editInput'};
 
     const handleCheckToggle = () => {
       setChecked(!checked)
@@ -78,7 +78,6 @@ const TodoContent = ({ item,getTodos }) => {
         >
             <ListItemButton
                 role={undefined}
-                onClick={handleCheckToggle}
                 dense
             >
                 <ListItemIcon>
@@ -88,10 +87,11 @@ const TodoContent = ({ item,getTodos }) => {
                         tabIndex={-1}
                         disableRipple
                         inputProps={{ "aria-labelledby": item.id }}
+                        onClick={handleCheckToggle}
                     />
                 </ListItemIcon>
-                <Input value={editText.inputValue} onChange={editTextChange} inputProps={ariaLabel} />
             </ListItemButton>
+                <Input value={editText.inputValue} onChange={editTextChange} inputProps={inputProp} />
         </TodoLi>
         :
         <TodoLi
