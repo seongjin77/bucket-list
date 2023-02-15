@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# 프로젝트 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**배포 링크 : todolist-seongjin.netlify.app**  
+**테스트 계정 : test123!@naver.com**  
+**비밀번호 : 123123123**
 
-## Available Scripts
+## 소개
 
-In the project directory, you can run:
+로그인, 회원가입을 통해 이용할 수 있는 투두리스트 입니다.
 
-### `npm start`
+# 🎬 기능 시연
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+|                                                          1. 회원가입                                                          |                                                           2. 로그인                                                           |                                                          3. 로그아웃                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/96804958/219045696-29f2ea6a-2246-46b7-8185-cecd0216f075.gif" width=245/>| <img src="https://user-images.githubusercontent.com/96804958/219046104-cdb7084e-9f2f-40be-8e70-18a56340a580.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046277-a16a0cf3-41c3-4992-9c57-dd7b485baee6.gif" width=245 /> |
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+|                                                         3. 투두 생성                                                          |                                                         4. 투두 수정                                                          |                                                         4. 투두 삭제                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://user-images.githubusercontent.com/96804958/219047210-81ab1ef3-c095-4799-82ff-a60fdf98684e.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219047389-dd5c6e53-4a14-4122-a74a-b46be97d4ee7.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219047497-6e051fbe-3d58-439c-aaab-fd59d719c298.gif" width=245 /> |
 
-### `npm run build`
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 기술스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- react
+- MUI
+- styled-component
+- axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 🗂 폴더구조
+```
+├── api
+├── asset
+├── components
+│   ├── header
+│   └── todo
+│       ├── createTodo
+│       ├── todoContent
+│       └── todoList
+├── constant
+├── hooks
+├── pages
+│   ├── 404page
+│   ├── login
+│   ├── sign
+│   └── todo
+├── router
+└── style
+```
