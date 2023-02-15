@@ -14,7 +14,7 @@
 
 |                                                          1. 회원가입                                                          |                                                           2. 로그인                                                           |                                                          3. 로그아웃                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/96804958/219045696-29f2ea6a-2246-46b7-8185-cecd0216f075.gif" width=245/>| <img src="https://user-images.githubusercontent.com/96804958/219046104-cdb7084e-9f2f-40be-8e70-18a56340a580.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046277-a16a0cf3-41c3-4992-9c57-dd7b485baee6.gif" width=245 /> |
+| <img src="https://user-images.githubusercontent.com/96804958/219045696-29f2ea6a-2246-46b7-8185-cecd0216f075.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046104-cdb7084e-9f2f-40be-8e70-18a56340a580.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046277-a16a0cf3-41c3-4992-9c57-dd7b485baee6.gif" width=245 /> |
 
 <br>
 
@@ -33,6 +33,7 @@
 
 # 🗂 폴더구조
 ```
+src
 ├── api
 ├── asset
 ├── components
