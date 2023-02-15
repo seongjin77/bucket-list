@@ -1,6 +1,6 @@
 # 프로젝트 소개
 
-**배포 링크 : todolist-seongjin.netlify.app**  
+**배포 링크 : https://todolist-seongjin.netlify.app/todo**  
 **테스트 계정 : test123!@naver.com**  
 **비밀번호 : 123123123**
 
