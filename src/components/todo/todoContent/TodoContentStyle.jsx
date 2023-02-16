@@ -7,6 +7,13 @@ const TodoLi = styled(ListItem)`
     }
     .MuiListItemText-root{
     }
+
+    
+    .MuiListItemText-root{
+      text-decoration: ${(props) =>props.textdeco }
+    }
+    
+
   `
   
   

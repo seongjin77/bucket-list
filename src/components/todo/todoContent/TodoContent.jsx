@@ -42,6 +42,7 @@ const TodoContent = ({ item,getTodos }) => {
     // 수정 취소, 수정 버튼
     const handleEdit = () => {
       setEdit(!edit)
+      editText.setInputValue(item.todo);
 
     }
 
@@ -90,11 +91,12 @@ const TodoContent = ({ item,getTodos }) => {
                         onClick={handleCheckToggle}
                     />
                 </ListItemIcon>
-            </ListItemButton>
                 <Input value={editText.inputValue} onChange={editTextChange} inputProps={inputProp} />
+            </ListItemButton>
         </TodoLi>
         :
         <TodoLi
+        textdeco={ checked ? 'line-through' : 'initial'}
         secondaryAction={
           <>
             <IconButton onClick={handleEdit} edge="end" aria-label="modificationBtn">
