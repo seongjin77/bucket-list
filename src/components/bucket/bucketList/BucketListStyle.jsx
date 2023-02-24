@@ -1,7 +1,7 @@
 import { List } from "@mui/material";
 import styled from "styled-components";
 
-const TodoListWrap = styled(List)`
+const BucketListWrap = styled(List)`
     &.MuiList-root {
         overflow-y: scroll;
         height: 100%;
@@ -20,4 +20,4 @@ const TodoListWrap = styled(List)`
         background: rgba(33, 122, 244, 0.1); 
     }
 `;
-export { TodoListWrap };
+export { BucketListWrap };

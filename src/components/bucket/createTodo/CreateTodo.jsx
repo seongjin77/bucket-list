@@ -29,7 +29,7 @@ const CreateTodo = ({getTodos}) => {
                     data-testid="new-todo-input"
                     onChange={todoValueChange}
                     id="todo"
-                    label="할 일"
+                    label="하고 싶은 일"
                     variant="outlined"
                 />
             </Grid>

@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { getTodoAxios } from '../../api/todo'
-import CreateTodo from '../../components/todo/createTodo/CreateTodo'
-import Todolist from '../../components/todo/todoList/Todolist'
+import CreateTodo from '../../components/bucket/createTodo/CreateTodo'
+import BucketList from '../../components/bucket/bucketList/BucketList'
 import { TodoBox, TodoWrap } from './TodoStyle'
 
 const Todo = () => {
@@ -23,7 +23,7 @@ const Todo = () => {
     <TodoWrap>
       <TodoBox>
         <CreateTodo getTodos={getTodos}/>
-        <Todolist getTodos={getTodos} todos={todos} />
+        <BucketList getTodos={getTodos} todos={todos} />
       </TodoBox>
     </TodoWrap>
   )

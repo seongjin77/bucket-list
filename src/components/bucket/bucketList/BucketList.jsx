@@ -1,11 +1,11 @@
 import React from "react";
 import TodoContent from "../todoContent/TodoContent";
-import { TodoListWrap } from "./TodolistStyle";
+import { BucketListWrap } from "./BucketListStyle";
 
-const Todolist = ({ todos,getTodos }) => {
+const BucketList = ({ todos,getTodos }) => {
     
     return (
-        <TodoListWrap>
+        <BucketListWrap>
             {todos.map((item) => (
                 <TodoContent
                     key={item.id}
@@ -13,8 +13,8 @@ const Todolist = ({ todos,getTodos }) => {
                     getTodos={getTodos}
                 />
             ))}
-        </TodoListWrap>
+        </BucketListWrap>
     );
 };
 
-export default Todolist;
+export default BucketList;
