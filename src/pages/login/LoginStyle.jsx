@@ -32,10 +32,5 @@ const LoginPageWrap = styled(Container)`
     }
 `;
 
-const ButtonFlexBox = styled.div`
-    width: 194px;
-    display: flex;
-    justify-content: space-around;
-`;
 
-export { LoginPageWrap, ButtonFlexBox };
+export { LoginPageWrap };

@@ -5,30 +5,33 @@ import { useNavigate } from "react-router-dom";
 import { signInAxios } from "../../api/auth";
 import { LoginPageWrap, ButtonFlexBox } from "./LoginStyle";
 import { useInput } from "../../hooks/useInput";
+import LoginForm from "../../components/loginForm/LoginForm";
 
 const Login = () => {
-    const navigate = useNavigate();
-    const [logInEmail, emailHandleChange, validatedEmail] = useInput("");
-    const [logInPassword, passwordHandleChange, validatedPassWord] =
-        useInput("");
-    const isButtonAbled = validatedEmail && validatedPassWord;
 
-    const moveSignUp = () => {
-        navigate("/signup");
-    };
+    // 로그인 페이지의 추가적인 css 작업들
+    // const navigate = useNavigate();
+    // const [logInEmail, emailHandleChange, validatedEmail] = useInput("");
+    // const [logInPassword, passwordHandleChange, validatedPassWord] =
+    //     useInput("");
+    // const isButtonAbled = validatedEmail && validatedPassWord;
 
-    const signIn = async () => {
-        const { data } = await signInAxios({
-            email: logInEmail.inputValue,
-            password: logInPassword.inputValue,
-        });
-        localStorage.setItem("accessToken", data.access_token);
-        navigate("/todo");
-    };
+    // const moveSignUp = () => {
+    //     navigate("/signup");
+    // };
+
+    // const signIn = async () => {
+    //     const { data } = await signInAxios({
+    //         email: logInEmail.inputValue,
+    //         password: logInPassword.inputValue,
+    //     });
+    //     localStorage.setItem("accessToken", data.access_token);
+    //     navigate("/todo");
+    // };
 
     return (
         <LoginPageWrap>
-            <form>
+            {/* <form>
                 <Box>
                     <Typography variant="h4" component="h2">
                         Login
@@ -73,7 +76,8 @@ const Login = () => {
                         </Button>
                     </ButtonFlexBox>
                 </Box>
-            </form>
+            </form> */}
+            <LoginForm/>
         </LoginPageWrap>
     );
 };
