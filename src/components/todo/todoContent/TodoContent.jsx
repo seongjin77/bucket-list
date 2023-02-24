@@ -11,8 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import Input from '@mui/material/Input';
 import { useState } from "react";
-import { deleteTodoAxios } from "../../../api/apiDeleteTodo";
-import { UpdateAxios } from "../../../api/apiUpdateTodo";
+import { deleteTodoAxios,UpdateAxios } from "../../../api/todo";
 import { useInput } from "../../../hooks/useInput";
 
 const TodoContent = ({ item,getTodos }) => {

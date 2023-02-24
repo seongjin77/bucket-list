@@ -3,7 +3,7 @@ import React from "react";
 import { CreateButton, TodoInput } from "./CreateStyle";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import { useInput } from "../../../hooks/useInput";
-import { createTodoAxios } from "../../../api/apiCreateTodo";
+import { createTodoAxios } from "../../../api/todo";
 
 const CreateTodo = ({getTodos}) => {
     const [todoValue, todoValueChange] = useInput("");

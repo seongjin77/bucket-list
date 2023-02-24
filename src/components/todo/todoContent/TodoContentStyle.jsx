@@ -5,15 +5,11 @@ const TodoLi = styled(ListItem)`
     .MuiInputBase-root{
       width: 80%;
     }
-    .MuiListItemText-root{
-    }
 
-    
     .MuiListItemText-root{
       text-decoration: ${(props) =>props.textdeco }
     }
     
-
   `
   
   

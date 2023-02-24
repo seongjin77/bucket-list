@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { SignUpPageWrap } from "./SignStyle";
 import { useInput } from "../../hooks/useInput";
-import { signUpAxios } from "../../api/apiSignUp";
+import { signUpAxios } from "../../api/auth";
 
 const Sign = () => {
     const [emailValue, emailHandleChange, validatedEmail] = useInput("");
