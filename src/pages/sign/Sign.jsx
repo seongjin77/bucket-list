@@ -5,27 +5,28 @@ import { useNavigate } from "react-router-dom";
 import { SignUpPageWrap } from "./SignStyle";
 import { useInput } from "../../hooks/useInput";
 import { signUpAxios } from "../../api/auth";
+import SignUpForm from "../../components/signUpForm/SignUpForm";
 
 const Sign = () => {
-    const [emailValue, emailHandleChange, validatedEmail] = useInput("");
-    const [passWordValue, passWordHandleChange, validatedPassWord] = useInput("");
-    const isButtonAbled = validatedEmail && validatedPassWord;
-    const navigate = useNavigate();
+    // const [emailValue, emailHandleChange, validatedEmail] = useInput("");
+    // const [passWordValue, passWordHandleChange, validatedPassWord] = useInput("");
+    // const isButtonAbled = validatedEmail && validatedPassWord;
+    // const navigate = useNavigate();
 
-    const SignUp = async () => {
-        const {status} = await signUpAxios({
-            email: emailValue.inputValue,
-            password: passWordValue.inputValue,
-        });
+    // const SignUp = async () => {
+    //     const {status} = await signUpAxios({
+    //         email: emailValue.inputValue,
+    //         password: passWordValue.inputValue,
+    //     });
         
-        if (status === 201) {
-            navigate("/signin");
-        }
-    };
+    //     if (status === 201) {
+    //         navigate("/signin");
+    //     }
+    // };
 
     return (
         <SignUpPageWrap>
-            <form>
+            {/* <form>
                 <Box>
                     <Typography variant="h4" component='h2'>Sign up</Typography>
                     <TextField
@@ -55,7 +56,8 @@ const Sign = () => {
                         회원가입
                     </Button>
                 </Box>
-            </form>
+            </form> */}
+            <SignUpForm/>
         </SignUpPageWrap>
     );
 };

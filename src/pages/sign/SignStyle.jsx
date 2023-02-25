@@ -2,10 +2,10 @@ import { Container } from "@mui/system";
 import styled from "styled-components";
 
 const SignUpPageWrap = styled(Container)`
-  background-color: lightblue;
+  background-color: #afe7f9;
   height: 100vh;
   overflow: hidden;
-  form{
+  /* form{
     margin-top: 200px;
   }
   .MuiBox-root{
@@ -28,6 +28,6 @@ const SignUpPageWrap = styled(Container)`
     .MuiButtonBase-root{
       margin-top:10px;
     }
-  }
+  } */
 `
 export {SignUpPageWrap};

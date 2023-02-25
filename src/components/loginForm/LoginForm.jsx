@@ -11,8 +11,7 @@ function LoginForm() {
 
   const navigate = useNavigate();
   const [logInEmail, emailHandleChange, validatedEmail] = useInput("",validator.email);
-  const [logInPassword, passwordHandleChange, validatedPassWord] =
-      useInput("",validator.password);
+  const [logInPassword, passwordHandleChange, validatedPassWord] = useInput("",validator.password);
   const isButtonAbled = validatedEmail.value && validatedPassWord.value;
 
 
