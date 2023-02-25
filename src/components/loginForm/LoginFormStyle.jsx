@@ -10,7 +10,7 @@ const LoginFormWrap = styled.form`
         justify-content: center;
         align-items: center;
         input {
-            background-color: #fff;
+            background-color: white;
             border-radius: 5px;
         }
         .MuiTypography-root {
@@ -22,6 +22,7 @@ const LoginFormWrap = styled.form`
             &.validationTxt {
                 font-size: 12px;
                 color: #9e9e9e;
+                height:18px;
             }
         }
         .MuiButtonBase-root {

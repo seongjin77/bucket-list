@@ -9,12 +9,12 @@ import { validator } from "../../util/validator";
 
 function LoginForm() {
 
-  // 
   const navigate = useNavigate();
   const [logInEmail, emailHandleChange, validatedEmail] = useInput("",validator.email);
   const [logInPassword, passwordHandleChange, validatedPassWord] =
       useInput("",validator.password);
-  const isButtonAbled = validatedEmail && validatedPassWord;
+  const isButtonAbled = validatedEmail.value && validatedPassWord.value;
+
 
   const moveSignUp = () => {
       navigate("/signup");
@@ -44,7 +44,7 @@ function LoginForm() {
                     onChange={emailHandleChange}
                 />
                 <Typography className="validationTxt" component="span">
-                    이메일 형식으로 적어주세요
+                    {validatedEmail.message}
                 </Typography>
                 <TextField
                     value={logInPassword.inputValue}
@@ -55,7 +55,7 @@ function LoginForm() {
                     onChange={passwordHandleChange}
                 />
                 <Typography className="validationTxt" component="span">
-                    비밀번호는 8자 이상입니다
+                    {validatedPassWord.message}
                 </Typography>
                 <ButtonFlexBox>
                     <Button
