@@ -5,14 +5,15 @@ import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { signInAxios } from "../../api/auth";
 import { useInput } from "../../hooks/useInput";
+import { validator } from "../../util/validator";
 
 function LoginForm() {
 
   // 
   const navigate = useNavigate();
-  const [logInEmail, emailHandleChange, validatedEmail] = useInput("");
+  const [logInEmail, emailHandleChange, validatedEmail] = useInput("",validator.email);
   const [logInPassword, passwordHandleChange, validatedPassWord] =
-      useInput("");
+      useInput("",validator.password);
   const isButtonAbled = validatedEmail && validatedPassWord;
 
   const moveSignUp = () => {

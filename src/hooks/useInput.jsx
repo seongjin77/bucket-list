@@ -1,29 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-export function useInput(initialValue){
+export function useInput(initialValue,validator){
   const [inputValue, setInputValue] = useState(initialValue);
-  const [checkValidated, setCheckValidated] = useState(false);
+  const validateResult = useRef( {value : false} )
 
   // input값 변경 함수
   const handleChange = (e) => {
     setInputValue(e.target.value)
     // 유효성 검사
-    if(e.target.id === 'email' && e.target.value.includes('@')) {
-      setCheckValidated(true)
-    }
-    else if(e.target.id === 'email' && e.target.value === ''){
-      setCheckValidated(false)
-    }
-    else if(e.target.id === 'password' && e.target.value.length >= 8){
-      setCheckValidated(true)
-    }
-    else if(e.target.id === 'password' && e.target.value === ''){
-      setCheckValidated(false)
-    }
-    else{
-      setCheckValidated(false)
-    }
+    validateResult.current = validator(e.target.value)
+
   }
 
-  return [{inputValue,setInputValue},handleChange,checkValidated]
+  return [{inputValue,setInputValue},handleChange,validateResult.current.value]
 }
