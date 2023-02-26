@@ -20,6 +20,5 @@ const EMAIL_PATTERN = /@/
 
 export const ValidationError = {
     EMAIL_ERROR: "이메일 형식으로 입력해주세요.",
-    PASSWORD_ERROR: "8자리 이상 입력해주세요.",
-    PASSWORD_CHECK_ERROR: "패스워드와 동일하게 입력해주세요.",
+    PASSWORD_ERROR: "8자리 이상 입력해주세요."
 };

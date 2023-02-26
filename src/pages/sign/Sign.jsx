@@ -1,62 +1,11 @@
 import React from "react";
-import { Button, TextField, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import { useNavigate } from "react-router-dom";
 import { SignUpPageWrap } from "./SignStyle";
-import { useInput } from "../../hooks/useInput";
-import { signUpAxios } from "../../api/auth";
 import SignUpForm from "../../components/signUpForm/SignUpForm";
 
 const Sign = () => {
-    // const [emailValue, emailHandleChange, validatedEmail] = useInput("");
-    // const [passWordValue, passWordHandleChange, validatedPassWord] = useInput("");
-    // const isButtonAbled = validatedEmail && validatedPassWord;
-    // const navigate = useNavigate();
-
-    // const SignUp = async () => {
-    //     const {status} = await signUpAxios({
-    //         email: emailValue.inputValue,
-    //         password: passWordValue.inputValue,
-    //     });
-        
-    //     if (status === 201) {
-    //         navigate("/signin");
-    //     }
-    // };
 
     return (
         <SignUpPageWrap>
-            {/* <form>
-                <Box>
-                    <Typography variant="h4" component='h2'>Sign up</Typography>
-                    <TextField
-                        id="email"
-                        value={emailValue.inputValue}
-                        onChange={emailHandleChange}
-                        type={"email"}
-                        placeholder="이메일을 입력해주세요"
-                        data-testid="email-input"
-                    />
-                    <Typography className="validationTxt" component='span'>이메일 형식으로 적어주세요</Typography>
-                    <TextField
-                        id="password"
-                        value={passWordValue.inputValue}
-                        onChange={passWordHandleChange}
-                        type={"text"}
-                        placeholder="비밀번호를 입력해주세요"
-                        data-testid="password-input"
-                    />
-                    <Typography className="validationTxt" component='span'>비밀번호는 8자리 이상입니다</Typography>
-                    <Button
-                        onClick={SignUp}
-                        disabled={!isButtonAbled}
-                        variant="contained"
-                        data-testid="signup-button"
-                    >
-                        회원가입
-                    </Button>
-                </Box>
-            </form> */}
             <SignUpForm/>
         </SignUpPageWrap>
     );
