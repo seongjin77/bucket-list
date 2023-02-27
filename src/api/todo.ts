@@ -10,9 +10,9 @@ const getTodoAxios = async () => {
     }
 };
 
-const createTodoAxios = async (body: string) => {
+const createTodoAxios = async (todo: string) => {
   try{
-    const res = await axiosAuthApi.post('/todos',{body})
+    const res = await axiosAuthApi.post('/todos',{todo})
     
     return res
   }
