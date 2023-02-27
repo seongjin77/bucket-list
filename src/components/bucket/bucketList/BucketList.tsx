@@ -3,7 +3,7 @@ import React from "react";
 import TodoContent from "../todoContent/TodoContent";
 import { BucketListWrap } from "./BucketListStyle";
 
-type Todo = {
+export type Todo = {
     id: number;
   todo: string;
   isCompleted: boolean;

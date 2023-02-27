@@ -1,7 +1,7 @@
 import { ListItem } from "@mui/material";
 import styled from "styled-components";
 
-const TodoLi = styled(ListItem)`
+const TodoLi = styled(ListItem)<{textdeco? : string}>`
     .MuiInputBase-root{
       width: 80%;
     }

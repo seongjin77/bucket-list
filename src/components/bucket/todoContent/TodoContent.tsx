@@ -13,8 +13,16 @@ import Input from '@mui/material/Input';
 import { useState } from "react";
 import { deleteTodoAxios,UpdateAxios } from "../../../api/todo";
 import { useInput } from "../../../hooks/useInput";
+import { Todo } from "../bucketList/BucketList";
 
-const TodoContent = ({ item,getTodos }) => {
+
+
+type PropsType = {
+  item: Todo;
+  getTodos: () => Promise<void>
+}
+
+const TodoContent = ({ item,getTodos }: PropsType) => {
   
     const [checked, setChecked] = useState(item.isCompleted);
     const [edit, setEdit] = useState(false);
@@ -24,10 +32,7 @@ const TodoContent = ({ item,getTodos }) => {
     const handleCheckToggle = () => {
       setChecked(!checked)
 
-      UpdateAxios(item.id,{
-        todo: item.todo,
-        isCompleted: !checked
-      })
+      UpdateAxios(item.id,item.todo,!checked)
     };
 
     const toDoDelete = async () => {
@@ -51,10 +56,7 @@ const TodoContent = ({ item,getTodos }) => {
           return
         }
 
-       await UpdateAxios(item.id,{
-          todo: editText.inputValue,
-          isCompleted: checked
-        })
+       await UpdateAxios(item.id, editText.inputValue,checked)
         setEdit(!edit)
         getTodos();
     }
@@ -86,7 +88,7 @@ const TodoContent = ({ item,getTodos }) => {
                         checked={checked}
                         tabIndex={-1}
                         disableRipple
-                        inputProps={{ "aria-labelledby": item.id }}
+                        inputProps={{ "aria-labelledby" : `${item.id}` }}
                         onClick={handleCheckToggle}
                     />
                 </ListItemIcon>
@@ -95,7 +97,7 @@ const TodoContent = ({ item,getTodos }) => {
         </TodoLi>
         :
         <TodoLi
-        textdeco={ checked ? 'line-through' : 'initial'}
+        textdeco = { checked ? 'line-through' : 'initial'}
         secondaryAction={
           <>
             <IconButton onClick={handleEdit} edge="end" aria-label="modificationBtn">
@@ -120,10 +122,10 @@ const TodoContent = ({ item,getTodos }) => {
                     checked={checked}
                     tabIndex={-1}
                     disableRipple
-                    inputProps={{ "aria-labelledby": item.id }}
+                    inputProps={{ "aria-labelledby": `${item.id}` }}
                 />
             </ListItemIcon>
-            <ListItemText id={item.id} primary={`${item.todo}`} />
+            <ListItemText id={`${item.id}`} primary={`${item.todo}`} />
         </ListItemButton>
     </TodoLi> }
       </>

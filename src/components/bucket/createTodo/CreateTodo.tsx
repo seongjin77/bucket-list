@@ -4,7 +4,6 @@ import { CreateButton, TodoInput } from "./CreateStyle";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import { useInput } from "../../../hooks/useInput";
 import { createTodoAxios } from "../../../api/todo";
-import { type } from "os";
 
 type PropsType = {
     getTodos: () => Promise<void>

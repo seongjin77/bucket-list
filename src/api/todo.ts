@@ -34,9 +34,9 @@ const deleteTodoAxios = async (Id : number) => {
   }
 };
 
-const UpdateAxios = async (Id: number, body: string) => {
+const UpdateAxios = async (Id: number, todo : string, isCompleted: boolean ) => {
   try {
-      const res = await axiosAuthApi.put(`/todos/${Id}`, body);
+      const res = await axiosAuthApi.put(`/todos/${Id}`, {todo, isCompleted});
 
       return res;
   } catch (error) {
