@@ -23,7 +23,6 @@ function LoginForm() {
             email: logInEmail.inputValue,
             password: logInPassword.inputValue,
         });
-        console.log('엑시오스',res)
         if (res?.status === 200) {
             localStorage.setItem("accessToken", res.data.access_token);
         }

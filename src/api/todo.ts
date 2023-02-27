@@ -10,9 +10,9 @@ const getTodoAxios = async () => {
     }
 };
 
-const createTodoAxios = async (body) => {
+const createTodoAxios = async (body: string) => {
   try{
-    const res = await axiosAuthApi.post('/todos',body)
+    const res = await axiosAuthApi.post('/todos',{body})
     
     return res
   }
@@ -24,7 +24,7 @@ const createTodoAxios = async (body) => {
 }
 
 
-const deleteTodoAxios = async (Id) => {
+const deleteTodoAxios = async (Id : number) => {
   try {
       const res = await axiosAuthApi.delete(`/todos/${Id}`);
 
@@ -34,7 +34,7 @@ const deleteTodoAxios = async (Id) => {
   }
 };
 
-const UpdateAxios = async (Id, body) => {
+const UpdateAxios = async (Id: number, body: string) => {
   try {
       const res = await axiosAuthApi.put(`/todos/${Id}`, body);
 

@@ -1,9 +1,9 @@
 import { axiosApi } from "./client";
 
-const signUpAxios = async (body: { email: string; password: string }) => {
+
+const signUpAxios = async (body: { email: string; password: string })  => {
     try {
         const res = await axiosApi.post("/auth/signup", body);
-
         return res;
     } catch (error) {
         console.log(error);
