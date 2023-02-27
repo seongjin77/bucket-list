@@ -1,6 +1,6 @@
 import { axiosApi } from "./client";
 
-const signUpAxios = async (body) => {
+const signUpAxios = async (body: { email: string; password: string }) => {
     try {
         const res = await axiosApi.post("/auth/signup", body);
 
@@ -11,7 +11,7 @@ const signUpAxios = async (body) => {
     }
 };
 
-const signInAxios = async (body) => {
+const signInAxios = async (body: { email: string; password: string }) => {
   try{
     const res = await axiosApi.post('/auth/signin',body);
     return res

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginFormWrap,ButtonFlexBox } from "./LoginFormStyle";
+import { LoginFormWrap, ButtonFlexBox } from "./LoginFormStyle";
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { signInAxios } from "../../api/auth";
@@ -8,25 +8,27 @@ import { useInput } from "../../hooks/useInput";
 import { validator } from "../../util/validator";
 
 function LoginForm() {
+    const navigate = useNavigate();
+    const [logInEmail, emailHandleChange, validatedEmail] = useInput("",validator.email);
+    const [logInPassword, passwordHandleChange, validatedPassWord] = useInput("",validator.password
+);
+    const isButtonAbled = validatedEmail.value && validatedPassWord.value;
 
-  const navigate = useNavigate();
-  const [logInEmail, emailHandleChange, validatedEmail] = useInput("",validator.email);
-  const [logInPassword, passwordHandleChange, validatedPassWord] = useInput("",validator.password);
-  const isButtonAbled = validatedEmail.value && validatedPassWord.value;
+    const moveSignUp = () => {
+        navigate("/signup");
+    };
 
-
-  const moveSignUp = () => {
-      navigate("/signup");
-  };
-
-  const signIn = async () => {
-      const { data } = await signInAxios({
-          email: logInEmail.inputValue,
-          password: logInPassword.inputValue,
-      });
-      localStorage.setItem("accessToken", data.access_token);
-      navigate("/todo");
-  };
+    const signIn = async () => {
+        const res = await signInAxios({
+            email: logInEmail.inputValue,
+            password: logInPassword.inputValue,
+        });
+        console.log('엑시오스',res)
+        if (res?.status === 200) {
+            localStorage.setItem("accessToken", res.data.access_token);
+        }
+        navigate("/todo");
+    };
 
     return (
         <LoginFormWrap>
