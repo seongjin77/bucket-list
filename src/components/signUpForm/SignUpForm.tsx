@@ -18,12 +18,12 @@ function SignUpForm() {
   const navigate = useNavigate();
 
     const SignUp = async () => {
-        const {status} = await signUpAxios({
+        const res = await signUpAxios({
             email: emailValue.inputValue,
             password: passwordValue.inputValue,
         });
         
-        if (status === 201) {
+        if (res?.status === 201) {
             navigate("/signin");
         }
     };
