@@ -11,7 +11,7 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
 
   const getTodos = async () => {
-    const toDodata = await getTodoAxios()
+    const toDodata  = await getTodoAxios()
     setTodos(toDodata)
   }
 

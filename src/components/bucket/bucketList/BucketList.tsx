@@ -1,8 +1,21 @@
+import { type } from "os";
 import React from "react";
 import TodoContent from "../todoContent/TodoContent";
 import { BucketListWrap } from "./BucketListStyle";
 
-const BucketList = ({ todos,getTodos }) => {
+type Todo = {
+    id: number;
+  todo: string;
+  isCompleted: boolean;
+  userId: number;
+}
+
+type PropsType = {
+    todos: Todo[];
+    getTodos: () => Promise<void>;
+}
+
+const BucketList = ({ todos,getTodos }: PropsType) => {
     
     return (
         <BucketListWrap>

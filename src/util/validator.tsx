@@ -1,12 +1,12 @@
 export const validator = {
-    email(value) {
+    email(value: string) {
         const result = EMAIL_PATTERN.test(value);
         return {
             value: result,
             message: result ? "" : ValidationError.EMAIL_ERROR,
         };
     },
-    password(value) {
+    password(value: string) {
         const result = value.length >= 8;
         return {
             value: result,
