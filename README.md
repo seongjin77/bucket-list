@@ -1,12 +1,12 @@
 # 프로젝트 소개
 
-**배포 링크 : https://todolist-seongjin.netlify.app/todo**  
+**배포 링크 : https://bucketlist-seongjin.netlify.app**  
 **테스트 계정 : test123!@naver.com**  
 **비밀번호 : 123123123**
 
 ## 소개
 
-로그인, 회원가입을 통해 이용할 수 있는 투두리스트 입니다.
+로그인, 회원가입을 통해 이용할 수 있는 버킷리스트 입니다.
 
 # 🎬 기능 시연
 
@@ -14,19 +14,20 @@
 
 |                                                          1. 회원가입                                                          |                                                           2. 로그인                                                           |                                                          3. 로그아웃                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/96804958/219045696-29f2ea6a-2246-46b7-8185-cecd0216f075.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046104-cdb7084e-9f2f-40be-8e70-18a56340a580.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219046277-a16a0cf3-41c3-4992-9c57-dd7b485baee6.gif" width=245 /> |
+| <img src="https://user-images.githubusercontent.com/96804958/222410189-5943d4b1-4135-4ac8-8af2-d7a0f3444810.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/222410331-1085fe11-2e6c-44f3-9239-0a9b782fe838.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/222410404-9b74a913-8405-4e77-a5ef-1d4ac54a2169.gif" width=245 /> |
 
 <br>
 
-|                                                         3. 투두 생성                                                          |                                                         4. 투두 수정                                                          |                                                         4. 투두 삭제                                                          |
+|                                                         3. 생성                                                          |                                                         4. 수정                                                          |                                                         4. 삭제                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/96804958/219047210-81ab1ef3-c095-4799-82ff-a60fdf98684e.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219047389-dd5c6e53-4a14-4122-a74a-b46be97d4ee7.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/219047497-6e051fbe-3d58-439c-aaab-fd59d719c298.gif" width=245 /> |
+| <img src="https://user-images.githubusercontent.com/96804958/222410476-d6576281-042d-4381-bbae-9f56fec52585.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/222410619-605158d3-26a6-444b-a814-1d7942894720.gif" width=245 /> | <img src="https://user-images.githubusercontent.com/96804958/222410724-e7585ac6-6331-4f80-b10c-b71bc3b9c9ad.gif" width=245 /> |
 
 </div>
 
 # 기술스택
 
 - react
+- TypeScript
 - MUI
 - styled-component
 - axios
@@ -35,13 +36,14 @@
 ```
 src
 ├── api
-├── asset
 ├── components
+│   ├── bucket
+│   │   ├── bucketList
+│   │   ├── createTodo
+│   │   └── todoContent
 │   ├── header
-│   └── todo
-│       ├── createTodo
-│       ├── todoContent
-│       └── todoList
+│   ├── loginForm
+│   └── signUpForm
 ├── constant
 ├── hooks
 ├── pages
@@ -50,5 +52,5 @@ src
 │   ├── sign
 │   └── todo
 ├── router
-└── style
+└── util
 ```
