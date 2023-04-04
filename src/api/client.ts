@@ -6,6 +6,8 @@ export const axiosApi = axios.create({
   headers: { "Content-Type": "application/json" }
 })
 
+
+
 export const axiosAuthApi = axios.create({
   baseURL: BASE_URL,
   headers: { "Content-Type": "application/json" }
