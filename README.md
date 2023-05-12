@@ -1,8 +1,8 @@
 # 프로젝트 소개
 
 **배포 링크 : https://bucketlist-seongjin.netlify.app**  
-**테스트 계정 : test123!@naver.com**  
-**비밀번호 : 123123123**
+**테스트 계정 : bucket@list.com**  
+**비밀번호 : bucket123456**
 
 ## 소개
 
